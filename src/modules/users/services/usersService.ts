@@ -25,10 +25,41 @@ export async function getAllUsers(): Promise<User[]> {
   }
 }
 
-// 🔄 Funciones para implementar por los estudiantes:
+// ✅ Funciones implementadas del Grupo 1:
+export async function getUserById(id: number): Promise<User> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/users/${id}`);
+    if (!response.ok) {
+      throw new ApiError(response.status, 'Error al obtener usuario');
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error en getUserById:', error);
+    throw error;
+  }
+}
 
-// export async function getUserById(id: number): Promise<User>
-// export async function createUser(data: CreateUserDto): Promise<User>
+export async function createUser(data: CreateUserDto): Promise<User> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/users`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      throw new ApiError(response.status, 'Error al crear usuario');
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error en createUser:', error);
+    throw error;
+  }
+}
+
+// 🔄 Funciones para implementar por otros grupos:
+
 // export async function updateUser(id: number, data: UpdateUserDto): Promise<User>
 // export async function deleteUser(id: number): Promise<void>
 // export async function getUserRoutines(id: number): Promise<WeeklyRoutine[]>

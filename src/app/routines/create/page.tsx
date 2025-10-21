@@ -6,7 +6,7 @@ import RoutineForm from '../../../components/routines/RoutineForm';
 export default function CreateRoutinePage() {
   const router = useRouter();
 
-  const handleRoutineSaved = (routine: any) => {
+  const handleRoutineSaved = () => {
     // Redirigir a la lista de rutinas después de crear
     router.push('/routines');
   };

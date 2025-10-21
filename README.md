@@ -480,129 +480,128 @@ export async function functionName(params): Promise<ReturnType> {
 **Total de endpoints: 21**  
 **División: 3 endpoints por grupo**
 
-#### **Grupo 1 - Users Básico**
-- **Endpoints:**
-  - `POST /users` - Crear usuario
-  - `GET /users` - Listar usuarios  
-  - `GET /users/:id` - Obtener usuario
-- **Servicios Backend:**
-  - `createUser(data: CreateUserDto): Promise<User>`
-  - `getAllUsers(): Promise<User[]>`
-  - `getUserById(id: number): Promise<User>`
-- **Componentes Visuales:**
-  - `UserCard.tsx` - Tarjeta de usuario
-  - `UserForm.tsx` - Formulario de usuario
-  - `UserList.tsx` - Lista de usuarios
-- **Páginas:**
-  - `/users` - Lista de usuarios
-  - `/users/create` - Crear usuario
-  - `/users/[id]` - Detalle de usuario
+#### **Grupo 1 - Users Básico** ⚠️ **SERVICIOS IMPLEMENTADOS - COMPONENTES PENDIENTES**
+- **Endpoints:** ✅ **IMPLEMENTADOS**
+  - `POST /users` - Crear usuario ✅
+  - `GET /users` - Listar usuarios ✅
+  - `GET /users/:id` - Obtener usuario ✅
+- **Servicios Backend:** ✅ **IMPLEMENTADOS**
+  - `createUser(data: CreateUserDto): Promise<User>` ✅
+  - `getAllUsers(): Promise<User[]>` ✅
+  - `getUserById(id: number): Promise<User>` ✅
+- **Componentes Visuales:** ❌ **NO IMPLEMENTADOS**
+  - `UserCard.tsx` - Tarjeta de usuario ❌
+  - `UserForm.tsx` - Formulario de usuario ❌
+  - `UserList.tsx` - Lista de usuarios ❌
+- **Páginas:** ⚠️ **PARCIALMENTE IMPLEMENTADAS**
+  - `/users` - Lista de usuarios ⚠️ (sin componentes)
+  - `/users/create` - Crear usuario ❌
+  - `/users/[id]` - Detalle de usuario ⚠️ (sin componentes)
 
-#### **Grupo 2 - Users Avanzado**
-- **Endpoints:**
-  - `PATCH /users/:id` - Actualizar usuario
-  - `DELETE /users/:id` - Eliminar usuario
-  - `GET /users/:id/routines` - Rutinas del usuario
-- **Servicios Backend:**
-  - `updateUser(id: number, data: UpdateUserDto): Promise<User>`
-  - `deleteUser(id: number): Promise<void>`
-  - `getUserRoutines(id: number): Promise<WeeklyRoutine[]>`
-- **Componentes Visuales:**
-  - `UserEditForm.tsx` - Formulario de edición
-  - `UserRoutinesList.tsx` - Lista de rutinas del usuario
-  - `UserActions.tsx` - Acciones de usuario
-- **Páginas:**
-  - `/users/[id]/edit` - Editar usuario
-  - `/users/[id]/routines` - Rutinas del usuario
+#### **Grupo 2 - Users Avanzado** ❌ **NO IMPLEMENTADO**
+- **Endpoints:** ❌ **NO IMPLEMENTADOS**
+  - `PATCH /users/:id` - Actualizar usuario ❌
+  - `DELETE /users/:id` - Eliminar usuario ❌
+  - `GET /users/:id/routines` - Rutinas del usuario ❌
+- **Servicios Backend:** ❌ **NO IMPLEMENTADOS**
+  - `updateUser(id: number, data: UpdateUserDto): Promise<User>` ❌
+  - `deleteUser(id: number): Promise<void>` ❌
+  - `getUserRoutines(id: number): Promise<WeeklyRoutine[]>` ❌
+- **Componentes Visuales:** ❌ **NO IMPLEMENTADOS**
+  - `UserEditForm.tsx` - Formulario de edición ❌
+  - `UserRoutinesList.tsx` - Lista de rutinas del usuario ❌
+  - `UserActions.tsx` - Acciones de usuario ❌
+- **Páginas:** ❌ **NO IMPLEMENTADAS**
+  - `/users/[id]/edit` - Editar usuario ❌
+  - `/users/[id]/routines` - Rutinas del usuario ❌
 
-#### **Grupo 3 - Profiles**
-- **Endpoints:**
-  - `GET /profiles/:userId` - Obtener perfil
-  - `PATCH /profiles/:userId` - Actualizar perfil
-  - `POST /exercises` - Crear ejercicio (1 endpoint extra)
-- **Servicios Backend:**
-  - `getProfileByUserId(userId: number): Promise<Profile>`
-  - `updateProfile(userId: number, data: UpdateProfileDto): Promise<Profile>`
-  - `createExercise(data: CreateExerciseDto): Promise<Exercise>`
-- **Componentes Visuales:**
-  - `ProfileCard.tsx` - Tarjeta de perfil
-  - `ProfileForm.tsx` - Formulario de perfil
-  - `ExerciseForm.tsx` - Formulario de ejercicio
-- **Páginas:**
-  - `/profiles/[userId]` - Detalle de perfil
-  - `/profiles/[userId]/edit` - Editar perfil
-  - `/exercises/create` - Crear ejercicio
+#### **Grupo 3 - Profiles** ❌ **NO IMPLEMENTADO**
+- **Endpoints:** ❌ **NO IMPLEMENTADOS**
+  - `GET /profiles/:userId` - Obtener perfil ❌
+  - `PATCH /profiles/:userId` - Actualizar perfil ❌
+  - `POST /exercises` - Crear ejercicio (1 endpoint extra) ❌
+- **Servicios Backend:** ❌ **NO IMPLEMENTADOS**
+  - `getProfileByUserId(userId: number): Promise<Profile>` ❌
+  - `updateProfile(userId: number, data: UpdateProfileDto): Promise<Profile>` ❌
+  - `createExercise(data: CreateExerciseDto): Promise<Exercise>` ❌
+- **Componentes Visuales:** ❌ **NO IMPLEMENTADOS**
+  - `ProfileCard.tsx` - Tarjeta de perfil ❌
+  - `ProfileForm.tsx` - Formulario de perfil ❌
+  - `ExerciseForm.tsx` - Formulario de ejercicio ❌
+- **Páginas:** ❌ **NO IMPLEMENTADAS**
+  - `/profiles/[userId]` - Detalle de perfil ❌
+  - `/profiles/[userId]/edit` - Editar perfil ❌
+  - `/exercises/create` - Crear ejercicio ❌
 
-#### **Grupo 4 - Exercises Básico**
-- **Endpoints:**
-  - `GET /exercises` - Listar ejercicios
-  - `GET /exercises/:id` - Obtener ejercicio
-  - `PATCH /exercises/:id` - Actualizar ejercicio
-- **Servicios Backend:**
-  - `getAllExercises(): Promise<Exercise[]>`
-  - `getExerciseById(id: number): Promise<Exercise>`
-  - `updateExercise(id: number, data: UpdateExerciseDto): Promise<Exercise>`
-- **Componentes Visuales:**
-  - `ExerciseList.tsx` - Lista de ejercicios
-  - `ExerciseCard.tsx` - Tarjeta de ejercicio
-  - `ExerciseEditForm.tsx` - Formulario de edición
-- **Páginas:**
-  - `/exercises` - Lista de ejercicios
-  - `/exercises/[id]` - Detalle de ejercicio
-  - `/exercises/[id]/edit` - Editar ejercicio
+#### **Grupo 4 - Exercises Básico** ⚠️ **SERVICIOS IMPLEMENTADOS - COMPONENTES PENDIENTES**
+- **Endpoints:** ✅ **IMPLEMENTADOS**
+  - `GET /exercises` - Listar ejercicios ✅
+  - `GET /exercises/:id` - Obtener ejercicio ✅
+  - `PATCH /exercises/:id` - Actualizar ejercicio ✅
+- **Servicios Backend:** ✅ **IMPLEMENTADOS**
+  - `getAllExercises(): Promise<Exercise[]>` ✅
+  - `getExerciseById(id: number): Promise<Exercise>` ✅
+  - `updateExercise(id: number, data: UpdateExerciseDto): Promise<Exercise>` ✅
+- **Componentes Visuales:** ❌ **NO IMPLEMENTADOS**
+  - `ExerciseList.tsx` - Lista de ejercicios ❌
+  - `ExerciseCard.tsx` - Tarjeta de ejercicio ❌
+  - `ExerciseEditForm.tsx` - Formulario de edición ❌
+- **Páginas:** ❌ **NO IMPLEMENTADAS**
+  - `/exercises` - Lista de ejercicios ❌ (solo placeholder)
+  - `/exercises/[id]` - Detalle de ejercicio ❌ (NO EXISTE)
+  - `/exercises/[id]/edit` - Editar ejercicio ❌ (NO EXISTE)
 
-#### **Grupo 5 - Exercises Avanzado + Routines Básico**
-- **Endpoints:**
-  - `DELETE /exercises/:id` - Eliminar ejercicio
-  - `POST /routines` - Crear rutina
-  - `GET /routines` - Listar rutinas
-- **Servicios Backend:**
-  - `deleteExercise(id: number): Promise<void>`
-  - `createRoutine(data: CreateRoutineDto): Promise<WeeklyRoutine>`
-  - `getAllRoutines(filters?: { dayOfWeek?: string; completed?: boolean; userId?: number }): Promise<WeeklyRoutine[]>`
-- **Componentes Visuales:**
-  - `ExerciseActions.tsx` - Acciones de ejercicio
-  - `RoutineForm.tsx` - Formulario de rutina
-  - `RoutineList.tsx` - Lista de rutinas
-- **Páginas:**
-  - `/exercises/[id]/delete` - Eliminar ejercicio
-  - `/routines` - Lista de rutinas
-  - `/routines/create` - Crear rutina
+#### **Grupo 5 - Exercises Avanzado + Routines Básico** ✅ **COMPLETADO**
+- **Endpoints:** ✅ **IMPLEMENTADOS**
+  - `DELETE /exercises/:id` - Eliminar ejercicio ✅
+  - `POST /routines` - Crear rutina ✅
+  - `GET /routines` - Listar rutinas ✅
+- **Servicios Backend:** ✅ **IMPLEMENTADOS**
+  - `deleteExercise(id: number): Promise<void>` ✅
+  - `createRoutine(data: CreateRoutineDto): Promise<WeeklyRoutine>` ✅
+  - `getAllRoutines(filters?: { dayOfWeek?: string; completed?: boolean; userId?: number }): Promise<WeeklyRoutine[]>` ✅
+- **Componentes Visuales:** ✅ **IMPLEMENTADOS**
+  - `ExerciseActions.tsx` - Acciones de ejercicio ✅
+  - `RoutineForm.tsx` - Formulario de rutina ✅
+  - `RoutineList.tsx` - Lista de rutinas ✅
+- **Páginas:** ✅ **IMPLEMENTADAS**
+  - `/exercises/[id]/delete` - Eliminar ejercicio ✅
+  - `/routines` - Lista de rutinas ✅
+  - `/routines/create` - Crear rutina ✅
 
-#### **Grupo 6 - Routines Avanzado**
-- **Endpoints:**
-  - `GET /routines/:id` - Obtener rutina
-  - `PATCH /routines/:id` - Actualizar rutina
-  - `DELETE /routines/:id` - Eliminar rutina
-- **Servicios Backend:**
-  - `getRoutineById(id: number): Promise<WeeklyRoutine>`
-  - `updateRoutine(id: number, data: UpdateRoutineDto): Promise<WeeklyRoutine>`
-  - `deleteRoutine(id: number): Promise<void>`
-- **Componentes Visuales:**
-  - `RoutineCard.tsx` - Tarjeta de rutina
-  - `RoutineEditForm.tsx` - Formulario de edición
-  - `RoutineActions.tsx` - Acciones de rutina
-- **Páginas:**
-  - `/routines/[id]` - Detalle de rutina
-  - `/routines/[id]/edit` - Editar rutina
-  - `/routines/[id]/delete` - Eliminar rutina
+#### **Grupo 6 - Routines Avanzado** ⚠️ **SERVICIOS IMPLEMENTADOS - PÁGINAS PENDIENTES**
+- **Endpoints:** ✅ **IMPLEMENTADOS**
+  - `GET /routines/:id` - Obtener rutina ✅
+  - `PATCH /routines/:id` - Actualizar rutina ✅
+  - `DELETE /routines/:id` - Eliminar rutina ✅
+- **Servicios Backend:** ✅ **IMPLEMENTADOS**
+  - `getRoutineById(id: number): Promise<WeeklyRoutine>` ✅
+  - `updateRoutine(id: number, data: UpdateRoutineDto): Promise<WeeklyRoutine>` ✅
+  - `deleteRoutine(id: number): Promise<void>` ✅
+- **Componentes Visuales:** ✅ **IMPLEMENTADOS**
+  - `RoutineForm.tsx` - Formulario de rutina ✅
+  - `RoutineList.tsx` - Lista de rutinas ✅
+- **Páginas:** ❌ **NO IMPLEMENTADAS**
+  - `/routines/[id]/edit` - Editar rutina ❌ (NO IMPLEMENTADA)
+  - `/routines/[id]` - Detalle de rutina ❌ (NO IMPLEMENTADA)
+  - `/routines/[id]/delete` - Eliminar rutina ❌ (NO IMPLEMENTADA)
 
-#### **Grupo 7 - Routines Especiales**
-- **Endpoints:**
-  - `PATCH /routines/:id/complete` - Completar rutina
-  - `POST /routines/:id/exercises` - Agregar ejercicio
-  - `DELETE /routines/:id/exercises/:exerciseId` - Quitar ejercicio
-- **Servicios Backend:**
-  - `completeRoutine(id: number, completed: boolean): Promise<WeeklyRoutine>`
-  - `addExerciseToRoutine(routineId: number, exerciseId: number): Promise<WeeklyRoutine>`
-  - `removeExerciseFromRoutine(routineId: number, exerciseId: number): Promise<WeeklyRoutine>`
-- **Componentes Visuales:**
-  - `RoutineCompletion.tsx` - Completar rutina
-  - `ExerciseSelector.tsx` - Selector de ejercicios
-  - `RoutineExerciseManager.tsx` - Gestor de ejercicios
-- **Páginas:**
-  - `/routines/[id]/complete` - Completar rutina
-  - `/routines/[id]/exercises` - Gestionar ejercicios
+#### **Grupo 7 - Routines Especiales** ✅ **COMPLETADO**
+- **Endpoints:** ✅ **IMPLEMENTADOS**
+  - `PATCH /routines/:id/complete` - Completar rutina ✅
+  - `POST /routines/:id/exercises` - Agregar ejercicio ✅
+  - `DELETE /routines/:id/exercises/:exerciseId` - Quitar ejercicio ✅
+- **Servicios Backend:** ✅ **IMPLEMENTADOS**
+  - `completeRoutine(id: number, completed: boolean): Promise<WeeklyRoutine>` ✅
+  - `addExerciseToRoutine(routineId: number, exerciseId: number): Promise<WeeklyRoutine>` ✅
+  - `removeExerciseFromRoutine(routineId: number, exerciseId: number): Promise<WeeklyRoutine>` ✅
+- **Componentes Visuales:** ✅ **IMPLEMENTADOS**
+  - `RoutineCompletion.tsx` - Completar rutina ✅
+  - `ExerciseSelector.tsx` - Selector de ejercicios ✅
+  - `RoutineExerciseManager.tsx` - Gestor de ejercicios ✅
+- **Páginas:** ✅ **IMPLEMENTADAS**
+  - `/routines/[id]/complete` - Completar rutina ✅
+  - `/routines/[id]/exercises` - Gestionar ejercicios ✅
 
 ### 🎯 **Criterios de Evaluación por Grupo:**
 

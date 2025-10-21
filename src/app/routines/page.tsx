@@ -22,7 +22,7 @@ export default function RoutinesPage() {
       setError(null);
       const routinesData = await getAllRoutines();
       setRoutines(routinesData);
-    } catch (err) {
+    } catch {
       setError('Error al cargar las rutinas');
     } finally {
       setIsLoading(false);

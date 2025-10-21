@@ -73,10 +73,14 @@ export default function UsersPage() {
             
             <div className="grid gap-4">
               {users.map((user) => (
-                <div key={user.id} className="border rounded-lg p-4 bg-gray-50">
+                <div key={user.id} className="border rounded-lg p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
                   <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-semibold text-lg">{user.name}</h3>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg text-blue-600 hover:text-blue-800">
+                        <a href={`/users/${user.id}`} className="hover:underline">
+                          {user.name}
+                        </a>
+                      </h3>
                       <p className="text-gray-600">{user.email}</p>
                       <div className="mt-2 text-sm text-gray-500">
                         <p>Edad: {user.age} años</p>
@@ -84,7 +88,7 @@ export default function UsersPage() {
                         <p>Altura: {user.height} cm</p>
                       </div>
                     </div>
-                    <div className="text-right text-sm text-gray-500">
+                    <div className="text-right text-sm text-gray-500 ml-4">
                       <p>ID: {user.id}</p>
                       <p>Creado: {new Date(user.createdAt).toLocaleDateString()}</p>
                     </div>
@@ -111,6 +115,15 @@ export default function UsersPage() {
                       </div>
                     </div>
                   )}
+                  
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    <a
+                      href={`/users/${user.id}`}
+                      className="inline-block px-4 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors"
+                    >
+                      Ver detalles →
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>

@@ -1,10 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { Exercise } from '../../../types/api';
-import { getExerciseById, deleteExercise } from '../../../modules/exercises/services/exercisesService';
-import { ApiError } from '../../../modules/exercises/services/exercisesService';
+import { Exercise } from '@/types/api';
+import { getExerciseById, deleteExercise, ApiError } from '@/modules/exercises/services/exercisesService';
 
 export default function DeleteExercisePage() {
   const [exercise, setExercise] = useState<Exercise | null>(null);
@@ -15,13 +14,7 @@ export default function DeleteExercisePage() {
   const params = useParams();
   const exerciseId = parseInt(params.id as string);
 
-  useEffect(() => {
-    if (exerciseId) {
-      loadExercise();
-    }
-  }, [exerciseId]);
-
-  const loadExercise = async () => {
+  const loadExercise = useCallback(async () => {
     try {
       setIsLoading(true);
       setError(null);
@@ -30,13 +23,21 @@ export default function DeleteExercisePage() {
     } catch (err) {
       if (err instanceof ApiError) {
         setError(err.message);
+      } else if (err instanceof Error) {
+        setError(err.message);
       } else {
         setError('Error al cargar el ejercicio');
       }
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [exerciseId]);
+
+  useEffect(() => {
+    if (exerciseId) {
+      loadExercise();
+    }
+  }, [exerciseId, loadExercise]);
 
   const handleDelete = async () => {
     if (!exercise) return;
@@ -52,6 +53,8 @@ export default function DeleteExercisePage() {
       
     } catch (err) {
       if (err instanceof ApiError) {
+        setError(err.message);
+      } else if (err instanceof Error) {
         setError(err.message);
       } else {
         setError('Error al eliminar el ejercicio');
