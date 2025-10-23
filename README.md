@@ -489,31 +489,31 @@ export async function functionName(params): Promise<ReturnType> {
   - `createUser(data: CreateUserDto): Promise<User>` ✅
   - `getAllUsers(): Promise<User[]>` ✅
   - `getUserById(id: number): Promise<User>` ✅
-- **Componentes Visuales:** ❌ **NO IMPLEMENTADOS**
-  - `UserCard.tsx` - Tarjeta de usuario ❌
-  - `UserForm.tsx` - Formulario de usuario ❌
-  - `UserList.tsx` - Lista de usuarios ❌
+- **Componentes Visuales:** ✅ **IMPLEMENTADOS**
+  - `UserCard.tsx` - Tarjeta de usuario ✅
+  - `UserForm.tsx` - Formulario de usuario ✅
+  - `UserList.tsx` - Lista de usuarios ✅
 - **Páginas:** ⚠️ **PARCIALMENTE IMPLEMENTADAS**
-  - `/users` - Lista de usuarios ⚠️ (sin componentes)
-  - `/users/create` - Crear usuario ❌
-  - `/users/[id]` - Detalle de usuario ⚠️ (sin componentes)
+  - `/users` - Lista de usuarios ✅ 
+  - `/users/create` - Crear usuario ✅
+  - `/users/[id]` - Detalle de usuario ✅
 
-#### **Grupo 2 - Users Avanzado** ❌ **NO IMPLEMENTADO**
-- **Endpoints:** ❌ **NO IMPLEMENTADOS**
-  - `PATCH /users/:id` - Actualizar usuario ❌
-  - `DELETE /users/:id` - Eliminar usuario ❌
-  - `GET /users/:id/routines` - Rutinas del usuario ❌
-- **Servicios Backend:** ❌ **NO IMPLEMENTADOS**
-  - `updateUser(id: number, data: UpdateUserDto): Promise<User>` ❌
-  - `deleteUser(id: number): Promise<void>` ❌
-  - `getUserRoutines(id: number): Promise<WeeklyRoutine[]>` ❌
-- **Componentes Visuales:** ❌ **NO IMPLEMENTADOS**
-  - `UserEditForm.tsx` - Formulario de edición ❌
-  - `UserRoutinesList.tsx` - Lista de rutinas del usuario ❌
-  - `UserActions.tsx` - Acciones de usuario ❌
-- **Páginas:** ❌ **NO IMPLEMENTADAS**
-  - `/users/[id]/edit` - Editar usuario ❌
-  - `/users/[id]/routines` - Rutinas del usuario ❌
+#### **Grupo 2 - Users Avanzado** ✅ **IMPLEMENTADO**
+- **Endpoints:** ✅ **IMPLEMENTADOS**
+  - `PATCH /users/:id` - Actualizar usuario ✅
+  - `DELETE /users/:id` - Eliminar usuario ✅
+  - `GET /users/:id/routines` - Rutinas del usuario ✅
+- **Servicios Backend:** ✅ **IMPLEMENTADOS**
+  - `updateUser(id: number, data: UpdateUserDto): Promise<User>` ✅
+  - `deleteUser(id: number): Promise<void>` ✅
+  - `getUserRoutines(id: number): Promise<WeeklyRoutine[]>` ✅
+- **Componentes Visuales:** ✅ **IMPLEMENTADOS**
+  - `UserEditForm.tsx` - Formulario de edición ✅
+  - `UserRoutinesList.tsx` - Lista de rutinas del usuario ✅
+  - `UserActions.tsx` - Acciones de usuario ✅
+- **Páginas:**  ✅**IMPLEMENTADAS**
+  - `/users/[id]/edit` - Editar usuario ✅
+  - `/users/[id]/routines` - Rutinas del usuario ✅
 
 #### **Grupo 3 - Profiles** ❌ **NO IMPLEMENTADO**
 - **Endpoints:** ❌ **NO IMPLEMENTADOS**

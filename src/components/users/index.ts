@@ -1,4 +1,6 @@
 // Barrel exports para componentes de usuarios
 export { default as UserCard } from './UserCard';
-export { default as UserForm } from './UserForm';
-export { default as UserProfile } from './UserProfile';
+export { UserForm } from './UserForm';
+export { default as UserEditForm } from './UserEditForm';
+export { UserList } from './UserList';
+export { default as UserRoutinesList } from './UserRoutinesList';

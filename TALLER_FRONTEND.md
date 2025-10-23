@@ -5,7 +5,7 @@
 **Total de endpoints: 21**  
 **División: 3 endpoints por grupo**
 
-#### **Grupo 1 - Users Básico**
+#### **Grupo 1 - Users Básico** Hanna
 - **Endpoints:**
   - `POST /users` - Crear usuario
   - `GET /users` - Listar usuarios  
@@ -23,7 +23,7 @@
   - `/users/create` - Crear usuario
   - `/users/[id]` - Detalle de usuario
 
-#### **Grupo 2 - Users Avanzado**
+#### **Grupo 2 - Users Avanzado** Martin
 - **Endpoints:**
   - `PATCH /users/:id` - Actualizar usuario
   - `DELETE /users/:id` - Eliminar usuario
@@ -40,7 +40,7 @@
   - `/users/[id]/edit` - Editar usuario
   - `/users/[id]/routines` - Rutinas del usuario
 
-#### **Grupo 3 - Profiles**
+#### **Grupo 3 - Profiles**Alejandro
 - **Endpoints:**
   - `GET /profiles/:userId` - Obtener perfil
   - `PATCH /profiles/:userId` - Actualizar perfil
@@ -58,7 +58,7 @@
   - `/profiles/[userId]/edit` - Editar perfil
   - `/exercises/create` - Crear ejercicio
 
-#### **Grupo 4 - Exercises Básico**
+#### **Grupo 4 - Exercises Básico**Miguel
 - **Endpoints:**
   - `GET /exercises` - Listar ejercicios
   - `GET /exercises/:id` - Obtener ejercicio
@@ -76,7 +76,7 @@
   - `/exercises/[id]` - Detalle de ejercicio
   - `/exercises/[id]/edit` - Editar ejercicio
 
-#### **Grupo 5 - Exercises Avanzado + Routines Básico**
+#### **Grupo 5 - Exercises Avanzado + Routines Básico**Jose David
 - **Endpoints:**
   - `DELETE /exercises/:id` - Eliminar ejercicio
   - `POST /routines` - Crear rutina
@@ -94,7 +94,7 @@
   - `/routines` - Lista de rutinas
   - `/routines/create` - Crear rutina
 
-#### **Grupo 6 - Routines Avanzado**
+#### **Grupo 6 - Routines Avanzado**Juan
 - **Endpoints:**
   - `GET /routines/:id` - Obtener rutina
   - `PATCH /routines/:id` - Actualizar rutina
@@ -112,7 +112,7 @@
   - `/routines/[id]/edit` - Editar rutina
   - `/routines/[id]/delete` - Eliminar rutina
 
-#### **Grupo 7 - Routines Especiales**
+#### **Grupo 7 - Routines Especiales**Esneider
 - **Endpoints:**
   - `PATCH /routines/:id/complete` - Completar rutina
   - `POST /routines/:id/exercises` - Agregar ejercicio
