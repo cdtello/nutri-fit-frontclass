@@ -1,12 +1,14 @@
 'use client'; // Le indica a nest que esto se ejecuta en el navegador
 
 import { useState } from 'react'; // Funcion useState que react usa para guardar y actualizar datos
+import type { CreateUserDto } from '@/types/api';
 
-export function UserForm({onSubmit}: { onSubmit: (data: any) => void}){
+export function UserForm({onSubmit}: { onSubmit: (data: CreateUserDto) => void}){
   // Declara un form que contiene los valores del formulario, setForm actualiza los valores
   const [form, setForm] = useState({
     name: '',
     email: '',
+    password: '',
     age: '',
     weight: '',
     height: '',
@@ -24,9 +26,10 @@ export function UserForm({onSubmit}: { onSubmit: (data: any) => void}){
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const userData = {
+    const userData: CreateUserDto = {
       name: form.name,
       email: form.email,
+      password: form.password,
       age: parseInt(form.age),
       weight: parseInt(form.weight),
       height: parseInt(form.height),
@@ -40,6 +43,7 @@ export function UserForm({onSubmit}: { onSubmit: (data: any) => void}){
     setForm({
       name: '',
       email: '',
+      password: '',
       age: '',
       weight: '',
       height: '',
@@ -64,6 +68,15 @@ export function UserForm({onSubmit}: { onSubmit: (data: any) => void}){
         placeholder="Correo"
         type="email"
         value={form.email}
+        onChange={handleChange}
+        className="border rounded w-full p-2"
+      />
+
+      <input
+        name="password"
+        placeholder="Contraseña"
+        type="password"
+        value={form.password}
         onChange={handleChange}
         className="border rounded w-full p-2"
       />

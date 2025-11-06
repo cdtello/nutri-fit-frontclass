@@ -40,7 +40,11 @@ export default function RoutineList({ userId, showFilters = true }: RoutineListP
       setIsLoading(true);
       setError(null);
       
-      const filterParams: any = {};
+      const filterParams: {
+        userId?: number;
+        dayOfWeek?: string;
+        completed?: boolean;
+      } = {};
       if (userId) filterParams.userId = userId;
       if (filters.dayOfWeek) filterParams.dayOfWeek = filters.dayOfWeek;
       if (filters.completed !== '') filterParams.completed = filters.completed === 'true';

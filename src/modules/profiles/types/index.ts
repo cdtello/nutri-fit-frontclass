@@ -9,9 +9,7 @@ export interface ProfileWithStats extends Profile {
   activityDescription: string;
 }
 
-export interface ProfileFormData extends UpdateProfileDto {
-  // Campos adicionales para el formulario si es necesario
-}
+export type ProfileFormData = UpdateProfileDto;
 
 export interface HealthMetrics {
   bmi: number;

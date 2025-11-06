@@ -9,13 +9,11 @@ import { ApiError } from '../../modules/exercises/services/exercisesService';
 interface ExerciseActionsProps {
   exercise: Exercise;
   onExerciseDeleted?: () => void;
-  onExerciseUpdated?: (exercise: Exercise) => void;
 }
 
 export default function ExerciseActions({ 
   exercise, 
-  onExerciseDeleted, 
-  onExerciseUpdated 
+  onExerciseDeleted
 }: ExerciseActionsProps) {
   const [isDeleting, setIsDeleting] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -91,7 +89,7 @@ export default function ExerciseActions({
             </h3>
             
             <p className="text-gray-600 mb-6">
-              ¿Estás seguro de que deseas eliminar el ejercicio "{exercise.name}"? 
+              ¿Estás seguro de que deseas eliminar el ejercicio &quot;{exercise.name}&quot;? 
               Esta acción no se puede deshacer.
             </p>
 

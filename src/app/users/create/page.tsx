@@ -3,16 +3,17 @@
 import { useState } from 'react';
 import { UserForm } from '@/components/users/UserForm';
 import { createUser } from '@/modules/users/services';
+import type { CreateUserDto } from '@/types/api';
 
 export default function UsersPage() {
   const [message, setMessage] = useState<string | null>(null);
 
   // 👉 Esta función se ejecuta cuando el usuario envía el formulario
-  const handleCreateUser = async (data: any) => {
+  const handleCreateUser = async (data: CreateUserDto) => {
     try {
       // Aquí mandamos los datos del formulario al backend usando createUser
-      const newUser = await createUser(data);
-      
+      await createUser(data);
+      setMessage('✅ Usuario creado exitosamente');
     } catch (error) {
       // Si hay un error (por ejemplo, backend caído o validación), lo mostramos
       setMessage('❌ Error al crear el usuario');

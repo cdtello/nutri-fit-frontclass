@@ -1,12 +1,6 @@
 // src/components/exercises/ExerciseList.tsx
 import Link from "next/link";
-
-export type Exercise = {
-  id: number;
-  name: string;
-  reps?: string;
-  videoUrl?: string;
-};
+import type { Exercise } from "@/types/api";
 
 type Props = {
   exercises: Exercise[];

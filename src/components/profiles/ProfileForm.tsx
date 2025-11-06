@@ -10,9 +10,6 @@ interface ProfileFormProps {
 
 export default function ProfileForm({ profile, onSubmit }: ProfileFormProps) {
   const defaultFormValues: UpdateProfileDto = {
-    weight: profile.weight,
-    height: profile.height,
-    age: profile.age,
     goal: profile.goal,
     activityLevel: profile.activityLevel,
   };
@@ -23,67 +20,6 @@ export default function ProfileForm({ profile, onSubmit }: ProfileFormProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {/* Peso */}
-      <div>
-        <label htmlFor="weight" className="block text-sm font-medium text-gray-700">
-          Peso (kg)
-        </label>
-        <input
-          id="weight"
-          type="number"
-          step="0.1"
-          {...register('weight', { 
-            required: 'El peso es requerido',
-            min: { value: 20, message: 'Peso mínimo: 20 kg' },
-            max: { value: 300, message: 'Peso máximo: 300 kg' }
-          })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
-        />
-        {errors.weight && (
-          <p className="mt-1 text-sm text-red-600">{errors.weight.message}</p>
-        )}
-      </div>
-
-      {/* Altura */}
-      <div>
-        <label htmlFor="height" className="block text-sm font-medium text-gray-700">
-          Altura (cm)
-        </label>
-        <input
-          id="height"
-          type="number"
-          {...register('height', { 
-            required: 'La altura es requerida',
-            min: { value: 100, message: 'Altura mínima: 100 cm' },
-            max: { value: 250, message: 'Altura máxima: 250 cm' }
-          })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
-        />
-        {errors.height && (
-          <p className="mt-1 text-sm text-red-600">{errors.height.message}</p>
-        )}
-      </div>
-
-      {/* Edad */}
-      <div>
-        <label htmlFor="age" className="block text-sm font-medium text-gray-700">
-          Edad (años)
-        </label>
-        <input
-          id="age"
-          type="number"
-          {...register('age', { 
-            required: 'La edad es requerida',
-            min: { value: 10, message: 'Edad mínima: 10 años' },
-            max: { value: 120, message: 'Edad máxima: 120 años' }
-          })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
-        />
-        {errors.age && (
-          <p className="mt-1 text-sm text-red-600">{errors.age.message}</p>
-        )}
-      </div>
-
       {/* Objetivo */}
       <div>
         <label htmlFor="goal" className="block text-sm font-medium text-gray-700">

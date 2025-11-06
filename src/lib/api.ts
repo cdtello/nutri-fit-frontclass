@@ -22,7 +22,7 @@ export async function apiGet<T>(endpoint: string): Promise<T> {
   return handleResponse<T>(response);
 }
 
-export async function apiPost<T>(endpoint: string, data: any): Promise<T> {
+export async function apiPost<T>(endpoint: string, data: unknown): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     method: 'POST',
     headers: {
@@ -33,7 +33,7 @@ export async function apiPost<T>(endpoint: string, data: any): Promise<T> {
   return handleResponse<T>(response);
 }
 
-export async function apiPatch<T>(endpoint: string, data: any): Promise<T> {
+export async function apiPatch<T>(endpoint: string, data: unknown): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     method: 'PATCH',
     headers: {
