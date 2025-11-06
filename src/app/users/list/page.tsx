@@ -46,7 +46,7 @@ export default function UsersPage() {
           <div className="bg-red-50 border border-red-200 rounded-lg p-4">
             <p className="text-red-800">❌ Error: {error}</p>
             <p className="text-red-600 text-sm mt-2">
-              Asegúrate de que el backend esté ejecutándose en http://localhost:3001
+              Asegúrate de que el backend esté ejecutándose en http://34.229.144.19:3000
             </p>
           </div>
         </div>

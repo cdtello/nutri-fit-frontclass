@@ -7,7 +7,15 @@ export class ApiError extends Error {
   }
 }
 
-const API_BASE_URL = '/api';
+// Función para obtener la URL base según el entorno
+function getApiBaseUrl(): string {
+  // En el servidor (Server Components), usar URL absoluta
+  if (typeof window === 'undefined') {
+    return 'http://34.229.144.19:3000';
+  }
+  // En el cliente, usar URL relativa (proxy)
+  return '/api';
+}
 
 async function handleResponse<T>(response: Response): Promise<T> {
   if (!response.ok) {
@@ -18,17 +26,20 @@ async function handleResponse<T>(response: Response): Promise<T> {
 }
 
 export async function getAllExercises(): Promise<Exercise[]> {
-  const response = await fetch(`${API_BASE_URL}/exercises`);
+  const apiBaseUrl = getApiBaseUrl();
+  const response = await fetch(`${apiBaseUrl}/exercises`);
   return handleResponse<Exercise[]>(response);
 }
 
 export async function getExerciseById(id: number): Promise<Exercise> {
-  const response = await fetch(`${API_BASE_URL}/exercises/${id}`);
+  const apiBaseUrl = getApiBaseUrl();
+  const response = await fetch(`${apiBaseUrl}/exercises/${id}`);
   return handleResponse<Exercise>(response);
 }
 
 export async function createExercise(data: CreateExerciseDto): Promise<Exercise> {
-  const response = await fetch(`${API_BASE_URL}/exercises`, {
+  const apiBaseUrl = getApiBaseUrl();
+  const response = await fetch(`${apiBaseUrl}/exercises`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -39,7 +50,8 @@ export async function createExercise(data: CreateExerciseDto): Promise<Exercise>
 }
 
 export async function updateExercise(id: number, data: UpdateExerciseDto): Promise<Exercise> {
-  const response = await fetch(`${API_BASE_URL}/exercises/${id}`, {
+  const apiBaseUrl = getApiBaseUrl();
+  const response = await fetch(`${apiBaseUrl}/exercises/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -50,7 +62,8 @@ export async function updateExercise(id: number, data: UpdateExerciseDto): Promi
 }
 
 export async function deleteExercise(id: number): Promise<void> {
-  const response = await fetch(`${API_BASE_URL}/exercises/${id}`, {
+  const apiBaseUrl = getApiBaseUrl();
+  const response = await fetch(`${apiBaseUrl}/exercises/${id}`, {
     method: 'DELETE',
   });
   

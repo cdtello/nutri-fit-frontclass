@@ -50,7 +50,7 @@ export interface Exercise {
   id: number;
   name: string;
   reps: string;
-  videoUrl: string;
+  videoUrl?: string | null;
   createdAt: string;
   updatedAt: string;
   weeklyRoutines?: WeeklyRoutine[];

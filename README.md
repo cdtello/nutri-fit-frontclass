@@ -542,14 +542,14 @@ export async function functionName(params): Promise<ReturnType> {
   - `getAllExercises(): Promise<Exercise[]>` ✅
   - `getExerciseById(id: number): Promise<Exercise>` ✅
   - `updateExercise(id: number, data: UpdateExerciseDto): Promise<Exercise>` ✅
-- **Componentes Visuales:** ❌ **NO IMPLEMENTADOS**
-  - `ExerciseList.tsx` - Lista de ejercicios ❌
-  - `ExerciseCard.tsx` - Tarjeta de ejercicio ❌
-  - `ExerciseEditForm.tsx` - Formulario de edición ❌
-- **Páginas:** ❌ **NO IMPLEMENTADAS**
-  - `/exercises` - Lista de ejercicios ❌ (solo placeholder)
-  - `/exercises/[id]` - Detalle de ejercicio ❌ (NO EXISTE)
-  - `/exercises/[id]/edit` - Editar ejercicio ❌ (NO EXISTE)
+- **Componentes Visuales:** ✅ **IMPLEMENTADOS**
+  - `ExerciseList.tsx` - Lista de ejercicios ✅
+  - `ExerciseCard.tsx` - Tarjeta de ejercicio ✅
+  - `ExerciseEditForm.tsx` - Formulario de edición ✅
+- **Páginas:** ✅ **IMPLEMENTADAS**
+  - `/exercises` - Lista de ejercicios ✅
+  - `/exercises/[id]` - Detalle de ejercicio ✅
+  - `/exercises/[id]/edit` - Editar ejercicio ✅
 
 #### **Grupo 5 - Exercises Avanzado + Routines Básico** ✅ **COMPLETADO**
 - **Endpoints:** ✅ **IMPLEMENTADOS**
